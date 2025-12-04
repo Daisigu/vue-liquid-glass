@@ -1,7 +1,7 @@
 {
   "name": "@daisigu/vue-liquid-glass",
   "description": "A beautiful Vue 3 component that creates a stunning liquid glass morphism effect using SVG filters and backdrop blur",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "main": "./dist/vglass.umd.js",
   "module": "./dist/vglass.es.js",
