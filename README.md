@@ -14,19 +14,19 @@ A beautiful Vue 3 component that creates a stunning liquid glass morphism effect
 ## 📦 Installation
 
 ```bash
-npm install vue-liquid-glass
+npm install @daisigu/vue-liquid-glass
 ```
 
 or
 
 ```bash
-yarn add vue-liquid-glass
+yarn add @daisigu/vue-liquid-glass
 ```
 
 or
 
 ```bash
-pnpm add vue-liquid-glass
+pnpm add @daisigu/vue-liquid-glass
 ```
 
 ## 🚀 Quick Start
@@ -44,7 +44,7 @@ pnpm add vue-liquid-glass
 </template>
 
 <script setup>
-import { VGlass } from 'vue-liquid-glass'
+import { VGlass } from '@daisigu/vue-liquid-glass'
 </script>
 
 <style scoped>
@@ -73,7 +73,7 @@ import { VGlass } from 'vue-liquid-glass'
 </template>
 
 <script setup>
-import { VGlass } from 'vue-liquid-glass'
+import { VGlass } from '@daisigu/vue-liquid-glass'
 </script>
 ```
 
@@ -157,8 +157,8 @@ For older browsers, the component will gracefully degrade (the blur effect may n
 Full TypeScript support is included. Import the component and its types:
 
 ```typescript
-import { VGlass } from 'vue-liquid-glass'
-import type { VGlassProps } from 'vue-liquid-glass'
+import { VGlass } from '@daisigu/vue-liquid-glass'
+import type { VGlassProps } from '@daisigu/vue-liquid-glass'
 ```
 
 ## 🤝 Contributing
