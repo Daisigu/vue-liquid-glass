@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import type { VGlassProps } from "./types";
+import { generateFilterId } from "./utils";
 
 defineOptions({
   name: 'VGlass',
@@ -17,7 +18,7 @@ const props = withDefaults(defineProps<VGlassProps>(), {
   numOctaves: 2,
 });
 
-const filterId = `vglass-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 11)}`;
+const filterId = generateFilterId();
 
 const styles = computed(() => {
   const filterValue = `url(#${filterId}) blur(${props.blur}px)`;
