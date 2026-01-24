@@ -1,6 +1,11 @@
 <script setup lang="ts">
-import { ref, computed, onMounted } from "vue";
+import { computed } from "vue";
 import type { VGlassProps } from "./types";
+
+defineOptions({
+  name: 'VGlass',
+  inheritAttrs: false,
+});
 
 const props = withDefaults(defineProps<VGlassProps>(), {
   as: "div",
@@ -12,38 +17,30 @@ const props = withDefaults(defineProps<VGlassProps>(), {
   numOctaves: 2,
 });
 
-const isClient = ref(false);
-const filterId = ref<string>("");
-
-onMounted(() => {
-  isClient.value = true;
-  filterId.value = `vglass-${Math.random().toString(36).slice(2, 9)}`;
-});
+const filterId = `vglass-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 11)}`;
 
 const styles = computed(() => {
-  if (!isClient.value || !filterId.value) {
-    return {};
-  }
-
-  const value = `url(#${filterId.value}) blur(${props.blur}px)`;
-
+  const filterValue = `url(#${filterId}) blur(${props.blur}px)`;
+  
   return {
-    backdropFilter: value,
-    WebkitBackdropFilter: value,
+    backdropFilter: filterValue,
+    WebkitBackdropFilter: filterValue,
   };
 });
+
+defineExpose({ filterId });
 </script>
 
 <template>
   <component :is="as" v-bind="$attrs" :style="styles">
     <slot />
     <svg
-      v-if="isClient"
-      style="display: none"
       aria-hidden="true"
       focusable="false"
+      role="presentation"
+      style="position: absolute; width: 0; height: 0; overflow: hidden; pointer-events: none"
     >
-      <filter :id="filterId">
+      <filter :id="filterId" color-interpolation-filters="sRGB">
         <feTurbulence
           type="turbulence"
           :baseFrequency="baseFrequency"
