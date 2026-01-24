@@ -8,7 +8,14 @@ export default defineConfig({
     vue(),
     dts({
       insertTypesEntry: true,
-      include: ["src/index.ts", "src/types.ts", "src/VGlass.vue"],
+      include: [
+        "src/index.ts",
+        "src/types.ts",
+        "src/VGlass.vue",
+        "src/directive.ts",
+        "src/utils.ts",
+        "src/directive-types.ts",
+      ],
       exclude: ["src/**/*.spec.ts", "src/**/*.test.ts"],
       outDir: "dist",
       tsconfigPath: "./tsconfig.app.json",

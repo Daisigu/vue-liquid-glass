@@ -16,7 +16,7 @@ export interface VGlassProps {
 
   /**
    * Displacement strength - controls the intensity of the glass distortion effect
-   * @default 20
+   * @default 40
    * @example 30
    */
   scale?: number;
@@ -64,7 +64,7 @@ export interface VGlassDirectiveConfig {
 
   /**
    * Displacement strength - controls the intensity of the glass distortion effect
-   * @default 20
+   * @default 40
    * @example 30
    */
   scale?: number;
@@ -103,8 +103,8 @@ export interface VGlassDirectiveConfig {
  * Default configuration for v-glass directive
  */
 export const defaultVGlassDirectiveConfig: Required<VGlassDirectiveConfig> = {
-  blur: 0,
-  scale: 20,
+  blur: 2,
+  scale: 40,
   baseFrequency: 0.01,
   xChannelSelector: "R",
   yChannelSelector: "G",
